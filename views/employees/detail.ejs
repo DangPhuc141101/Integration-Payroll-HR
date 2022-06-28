@@ -1,0 +1,166 @@
+<% layout('layout/boilerplate') %>
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                            <div class="row">
+                                <div class="col-xl-6 col-md-6 mx-auto">
+                                    <div class="card Recent-Users">
+                                        <div class="card-header">
+                                            <h5>Employee</h5>
+                                            <div class="row">
+                                                <div class="col-sm">Employee ID</div>
+                                                <div class="col-sm"><%=employee['idEmployee']%>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm">First Name</div>
+                                                <div class="col-sm"><%=employee['firstName']%>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm">Last Name</div>
+                                                <div class="col-sm"><%=employee['lastName']%>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm">Middle Initial</div>
+                                                <div class="col-sm">
+                                                    <%=employee['middleInitial']%>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm">SSN</div>
+                                                <div class="col-sm">
+                                                    <%=employee['ssn']%>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm">Pay Rate</div>
+                                                <div class="col-sm">
+                                                    <%=employee['payRate']%>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm">Pay Rate Id</div>
+                                                <div class="col-sm">
+                                                    <%=employee['payRateId']%>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm">Vacation Day</div>
+                                                <div class="col-sm">
+                                                    <%=employee['vacationDay']%>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm">Paid Today</div>
+                                                <div class="col-sm">
+                                                    <%=employee['paidToDay']%>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm">Paid Last Year</div>
+                                                <div class="col-sm">
+                                                    <%=employee['paidLastYear']%>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm">Address 1</div>
+                                                <div class="col-sm">
+                                                    <%=employee['address1']%>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm">Address 2</div>
+                                                <div class="col-sm">
+                                                    <%=employee['address1']%>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm">City</div>
+                                                <div class="col-sm">
+                                                    <%=employee['city']%>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm">State</div>
+                                                <div class="col-sm">
+                                                    <%=employee['state']%>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm">Zip</div>
+                                                <div class="col-sm">
+                                                    <%=employee['zip']%>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm">Phone Number</div>
+                                                <div class="col-sm">
+                                                    <%=employee['phoneNumber']%>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm">Social Security Number</div>
+                                                <div class="col-sm">
+                                                    <%=employee['socialSecurityNumber']%>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm">driversLicense</div>
+                                                <div class="col-sm">
+                                                    <%=employee['driversLicense']%>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm">Marital Status</div>
+                                                <div class="col-sm">
+                                                    <%=employee['maritalStatus']%>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm">Gender</div>
+                                                <div class="col-sm">
+                                                    <%=employee['gender']%>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm">Shareholder Status</div>
+                                                <div class="col-sm">
+                                                    <%=employee['shareholderStatus']%>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm">Benefit Plans</div>
+                                                <div class="col-sm">
+                                                    <%=benefitPlan['planName']%>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm">Ethnicity</div>
+                                                <div class="col-sm">
+                                                    <%=employee['ethnicity']%>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a class="card-link btn btn-outline-info"
+                                        href="/employees/<%=employee['idEmployee']%>/edit">Edit</a>
+                                    <form class="d-inline"
+                                        action="/employees/<%=employee['idEmployee']%>?_method=DELETE" method="POST">
+                                        <button class="btn btn-outline-danger">Delete</button>
+                                    </form>
+                                    <a class="card-link btn btn-outline-info" href="/employees">Back to list</a>
+
+                                </div>
+                            </div>
+                            <!-- [ Main Content ] end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

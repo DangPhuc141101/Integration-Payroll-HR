@@ -1,0 +1,73 @@
+<% layout('layout/boilerplate') %>
+
+    <div class="pcoded-wrapper">
+        <div class="pcoded-content">
+            <div class="pcoded-inner-content">
+                <!-- [ breadcrumb ] start -->
+
+                <!-- [ breadcrumb ] end -->
+                <div class="main-body">
+                    <div class="page-wrapper">
+                        <!-- [ Main Content ] start -->
+                        <div class="row">
+                            <div class="col-xl-12 col-md-6">
+                                <div class="card Recent-Users">
+                                    <div class="card-header">
+                                        <h5>Job History - <a href="/job-history/new" class="">Create New</a></h5>
+                                    </div>
+                                    <div class="card-block px-0 py-3">
+                                        <div class="table-responsive">
+                                            <table class="table table-hover">
+                                                <thead>
+                                                    <th>Full Name</th>
+                                                    <th>Department</th>
+                                                    <th>Division</th>
+                                                    <th>Start Date</th>
+                                                    <th>End Date</th>
+                                                    <th>Job Category</th>
+                                                    <th>Location</th>
+                                                    <th></th>
+                                                </thead>
+                                                <tbody>
+                                                    <%for (let row of jobHistory){%>
+                                                        <tr class="unread">
+                                                            <td>
+                                                                <h6 class="mb-1"><%=row['First_Name']%> <%=row['Last_Name']%></h6>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-1"><%=row['Department']%></h6>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-1"><%=row['Division']%></h6>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-1"><%=row['Start_Date'].toLocaleDateString()%></h6>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-1"><%=row['End_Date'].toLocaleDateString()%></h6>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-1"><%=row['Job_Category']%></h6>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-1"><%=row['Location']%></h6>
+                                                            </td>
+                                                            <td>
+                                                                <a class="card-link btn btn-outline-info" href="/job-history/<%=row['ID']%>">Detail</a>
+                                                               
+                                                            </td>
+                                                        </tr>
+                                                    <%}%>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- [ Main Content ] end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

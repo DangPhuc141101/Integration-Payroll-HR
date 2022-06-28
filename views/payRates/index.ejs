@@ -1,0 +1,82 @@
+<% layout('layout/boilerplate') %>
+
+    <div class="pcoded-wrapper">
+        <div class="pcoded-content">
+            <div class="pcoded-inner-content">
+                <!-- [ breadcrumb ] start -->
+
+                <!-- [ breadcrumb ] end -->
+                <div class="main-body">
+                    <div class="page-wrapper">
+                        <!-- [ Main Content ] start -->
+                        <div class="row">
+                            <div class="col-xl-12 col-md-6">
+                                <div class="card Recent-Users">
+                                    <div class="card-header">
+                                        <h5>Pay rates - <a href="/payrates/new" novalidate class="validated-form needs-validation">Create New</a></h5>
+                                    </div>
+                                    <div class="card-block px-0 py-3">
+                                        <div class="table-responsive">
+                                            <table class="table table-hover">
+                                                <thead>
+                                                    <th>ID Pay Rate</th>
+                                                    <th>Pay Rate Name</th>
+                                                    <th>Value</th>
+                                                    <th>Tax Percentage</th>
+                                                    <th>Pay Type</th>
+                                                    <th>Pay Amount</th>
+                                                    <th>PT Level C</th>
+                                                    <th></th>
+                                                </thead>
+                                                <tbody>
+                                                    <%for (let row of data){%>
+                                                        <tr class="unread">
+                                                            <td>
+                                                                <h6 class="mb-1"><%=row['idPay_Rates']%></h6>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-1"><%=row['Pay_Rate_Name']%></h6>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-1"><%=row['Value']%></h6>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-1"><%=row['Tax_Percentage']%></h6>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-1"><%=row['Pay_Type']%></h6>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-1"><%=row['Pay_Amount']%></h6>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-1"><%=row['PT_Level_C']%></h6>
+                                                            </td>
+                                                            <td>
+                                                                <a class="card-link btn btn-outline-info" href="/payrates/<%=row['idPay_Rates']%>">Detail</a>
+                                                               
+                                                            </td>
+                                                        </tr>
+                                                    <%}%>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--[ Recent Users ] end-->
+
+                            <!-- [ statistics year chart ] start -->
+
+                            <!-- [ statistics year chart ] end -->
+                            <!--[social-media section] start-->
+
+
+
+                        </div>
+                        <!-- [ Main Content ] end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,51 @@
+<% layout('layout/boilerplate') %>
+
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <!-- [ breadcrumb ] start -->
+
+                    <!-- [ breadcrumb ] end -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                            <div class="row">
+                                <div class="col-xl-6 col-md-6 mx-auto">
+                                    <div class="card Recent-Users">
+                                        <div class="card-header">
+                                            <h5>Create - Benefit Plan</h5>
+                                           
+                                        </div>
+                                    </div>
+                                    
+                                    <form action="/benefit-plan" method="POST">
+                                        <div class="mb-3">
+                                            <label class="form-label font-weight-bold" for="plan-name">Plan Name</label>
+                                            <input type="text" id="plan-name" class="form-control bg-white" name="benefitPlan[planName]">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label font-weight-bold" for="deductable">Plan Deductable</label>
+                                            <input type="number" id="deductable" class="form-control bg-white" step= "0.01" name="benefitPlan[deductable]">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="percentage-coPay" class="form-label font-weight-bold">Percentage CoPay</label>
+                                            <input type="number" id="percentage-coPay" class="form-control bg-white" name="benefitPlan[percentageCoPay]">
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <button class="btn btn-outline-primary">Create Benefit Plan</button>
+                                            <a class="card-link btn btn-outline-info"
+                                            href="/benefit-plan">Back to list</a>
+                                        </div>
+                                </div>
+                                </form>
+
+                            </div>
+                         </div>
+                        <!-- [ Main Content ] end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    

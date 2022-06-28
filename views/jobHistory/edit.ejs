@@ -1,0 +1,105 @@
+<% layout('layout/boilerplate') %>
+    
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <!-- [ breadcrumb ] start -->
+
+                    <!-- [ breadcrumb ] end -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                            <div class="row">
+                                <div class="col-xl-6 col-md-6 mx-auto">
+                                    <div class="card Recent-Users">
+                                        <div class="card-header">
+                                            <h5>Create - Job History</h5>
+                                           
+                                        </div>
+                                    </div>
+                                    
+                                    <form action="/job-history/<%=jobHistory['id']%>?_method=PUT" method="POST" novalidate class="validated-form">
+                                        <div class="mb-3 d-none">
+                                            <label class="form-label font-weight-bold" for="id">ID</label>
+                                            <input type="text" id="id" class="form-control bg-white" name="jobHistory[id]" value="<%=jobHistory['id']%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label font-weight-bold" for="employee-id">Employee</label>
+                                            <select class="custom-select" id="employee-id" name="jobHistory[employeeId]">
+                                                <% if (employees.length >=1){%>
+                                                    <option selected value="<%=employees[0]['idEmployee']%>"><%=employees[0]['First_Name']%> <%=employees[0]['Last_Name']%></option>
+                                                <%}%>
+                                                <%for (let i=1; i<employees.length; i++) {%>
+                                                    <option value="<%=employees[i]['idEmployee']%>"><%=employees[i]['First_Name']%> <%=employees[i]['Last_Name']%></option>
+                                                <%}%>
+                                              </select>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label font-weight-bold" for="department">Department</label>
+                                            <input type="text" id="department" class="form-control bg-white" name="jobHistory[department]" value="<%=jobHistory['department']%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="deivision" class="form-label font-weight-bold">Division</label>
+                                            <input type="text" id="deivision" class="form-control bg-white" name="jobHistory[division]" value="<%=jobHistory['division']%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="start-date" class="form-label font-weight-bold">Start Date</label>
+                                            <input type="date" id="start-date" class="form-control bg-white" name="jobHistory[startDate]" value="<%=startDate%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="end-date" class="form-label font-weight-bold">End Date</label>
+                                            <input type="date" id="end-date" class="form-control bg-white" name="jobHistory[endDate]" value="<%=endDate%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="job-title" class="form-label font-weight-bold">Job Title</label>
+                                            <input type="text" id="job-title" class="form-control bg-white" name="jobHistory[jobTitle]" value="<%=jobHistory['jobTitle']%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="supervisor" class="form-label font-weight-bold">Supervisor</label>
+                                            <input type="number" id="supervisor" class="form-control bg-white" name="jobHistory[supervisor]" value="<%=jobHistory['supervisor']%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="job-category" class="form-label font-weight-bold">Job Category</label>
+                                            <input type="string" id="job-category" class="form-control bg-white" name="jobHistory[jobCategory]" value="<%=jobHistory['jobCategory']%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="location" class="form-label font-weight-bold">Location</label>
+                                            <input type="string" id="location" class="form-control bg-white" name="jobHistory[location]" value="<%=jobHistory['location']%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="departmen-code" class="form-label font-weight-bold">Departmen Code</label>
+                                            <input type="number" id="departmen-code" class="form-control bg-white" name="jobHistory[departmentCode]" step="0.01" value="<%=jobHistory['departmentCode']%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="salary-type" class="form-label font-weight-bold">Salary Type</label>
+                                            <input type="number" id="salary-type" class="form-control bg-white" name="jobHistory[salaryType]" step="0.01" value="<%=jobHistory['salaryType']%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="pay-period" class="form-label font-weight-bold">Pay Period</label>
+                                            <input type="number" id="pay-period" class="form-control bg-white" name="jobHistory[payPeriod]" step="0.01" value="<%=jobHistory['payPeriod']%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="hours-per-week" class="form-label font-weight-bold">Hours per Week</label>
+                                            <input type="string" id="hours-per-week" class="form-control bg-white" name="jobHistory[hoursPerWeek]" value="<%=jobHistory['hoursPerWeek']%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="hazardous-training" class="form-label font-weight-bold">Hazardous Training</label>
+                                            <input type="checkbox" id="hazardous-training" class="checkbox" value="True" name="jobHistory[hazardousTraining]">
+                                        </div>
+                                        <div class="mb-3">
+                                            <button class="btn btn-outline-primary">Edit Job History</button>
+                                            <a class="card-link btn btn-outline-info" href="/job-history">Back to list</a>
+                                        </div>
+                                </div>
+                                </form>
+
+                            </div>
+
+                        </div>
+                        <!-- [ Main Content ] end -->
+                    </div>
+                </div>    
+            </div>
+        </div>
+    </div>

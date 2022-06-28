@@ -1,0 +1,66 @@
+<% layout('layout/boilerplate') %>
+    
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <!-- [ breadcrumb ] start -->
+
+                    <!-- [ breadcrumb ] end -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                            <div class="row">
+                                <div class="col-xl-6 col-md-6 mx-auto">
+                                    <div class="card Recent-Users">
+                                        <div class="card-header">
+                                            <h5>Create - Pay rates</h5>
+                                           
+                                        </div>
+                                    </div>
+                                    
+                                    <form action="/payrates" method="POST"  class="needs-validation" novalidate>
+                                        <div class="mb-3">
+                                            <label class="form-label font-weight-bold" for="pay-rate-id">Pay rate ID</label>
+                                            <input type="number" id="pay-rate-id" class="form-control bg-white" name="payrate[idPayRates]" required>
+                                            <div class="valid-feedback">
+                                                Looks good!
+                                              </div>    
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label font-weight-bold" for="pay_rate_name">Pay rate name</label>
+                                            <input type="text" id="pay_rate_name" class="form-control bg-white" name="payrate[payRateName]" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="value" class="form-label font-weight-bold">Value</label>
+                                            <input type="number" id="value" class="form-control bg-white" name="payrate[value]" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="tax_percentage" class="form-label font-weight-bold">Tax Percentage</label>
+                                            <input type="number" id="tax_percentage" class="form-control bg-white" name="payrate[taxPercentage]" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="pay_type" class="form-label font-weight-bold">Pay Type</label>
+                                            <input type="number" id="pay_type" class="form-control bg-white" name="payrate[payType]" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="pay_amount" class="form-label font-weight-bold">Pay Amount</label>
+                                            <input type="number" id="pay_amount" class="form-control bg-white" name="payrate[payAmount]" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="pt_level_c" class="form-label font-weight-bold">PT Level C</label>
+                                            <input type="number" id="pt_level_c" class="form-control bg-white" name="payrate[PTLevelC]" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <button class="btn btn-outline-primary">Create Pay Rate</button>
+                                            <a class="card-link btn btn-outline-info" href="/payrates">Back to list</a>
+                                        </div>
+                                </div>
+                                </form>
+                        </div>
+                        <!-- [ Main Content ] end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    

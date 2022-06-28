@@ -1,0 +1,94 @@
+<% layout('layout/boilerplate') %>
+
+    <div class="pcoded-wrapper">
+        <div class="pcoded-content">
+            <div class="pcoded-inner-content">
+                <!-- [ breadcrumb ] start -->
+
+                <!-- [ breadcrumb ] end -->
+                <div class="main-body">
+                    <div class="page-wrapper">
+                        <!-- [ Main Content ] start -->
+                        <div class="row">
+                            <div class="col-xl-6 col-md-6 mx-auto">
+                                <div class="card Recent-Users">
+                                    <div class="card-header">
+                                        <h5>Job History</h5>
+                                    </div>
+                                    <div class="card-block px-0 py-3">
+                                        <div class="row">
+                                            <div class="col-sm">Job History ID</div>
+                                            <div class="col-sm"><%=jobHistory['jobHistoryID']%></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm">Employee Id</div>
+                                            <div class="col-sm"><%=jobHistory['employeeId']%></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm">Department</div>
+                                            <div class="col-sm"><%=jobHistory['department']%></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm">Division</div>
+                                            <div class="col-sm"><%=jobHistory['division']%></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm">Start Date</div>
+                                            <div class="col-sm"><%=startDate%></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm">End Date</div>
+                                            <div class="col-sm"><%=endDate%></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm">Job Title</div>
+                                            <div class="col-sm"><%=jobHistory['jobTitle']%></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm">Supervisor</div>
+                                            <div class="col-sm"><%=jobHistory['supervisor']%></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm">Job Category</div>
+                                            <div class="col-sm"><%=jobHistory['jobCategory']%></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm">Location</div>
+                                            <div class="col-sm"><%=jobHistory['location']%></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm">Department Code</div>
+                                            <div class="col-sm"><%=jobHistory['departmentCode']%></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm">Salary Type</div>
+                                            <div class="col-sm"><%=jobHistory['salaryType']%></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm">Pay Period</div>
+                                            <div class="col-sm"><%=jobHistory['payPeriod']%></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm">Hours Per Week</div>
+                                            <div class="col-sm"><%=jobHistory['hoursPerWeek']%></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm">Hazardous Training</div>
+                                            <div class="col-sm"><%=jobHistory['Hazardous Training']%></div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <a class="card-link btn btn-outline-info" href="/job-history/<%=jobHistory['jobHistoryID']%>/edit">Edit</a>
+                                    <form class="d-inline" action="/job-history/<%=jobHistory['jobHistoryID']%>?_method=DELETE" method="POST">
+                                        <button class="btn btn-outline-danger">Delete</button>
+                                    </form>
+                                    <a class="card-link btn btn-outline-info" href="/job-history">Back to list</a>
+                            </div>
+                        </div>
+                        <!-- [ Main Content ] end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

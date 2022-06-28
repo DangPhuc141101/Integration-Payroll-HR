@@ -1,0 +1,80 @@
+<% layout('layout/boilerplate') %>
+    <div class="pcoded-wrapper">
+        <div class="pcoded-content">
+            <div class="pcoded-inner-content">
+                <!-- [ breadcrumb ] start -->
+
+                <!-- [ breadcrumb ] end -->
+                <div class="main-body">
+                    <div class="page-wrapper">
+                        <!-- [ Main Content ] start -->
+                        <div class="row">
+                            <div class="col-xl-12 col-md-6">
+                                <div class="card Recent-Users">
+                                    <div class="card-header">
+                                        <h5>Employee - <a href="/employees/new" class="">Create New</a></h5>
+                                    </div>
+                                    <div class="card-block px-0 py-3">
+                                        <div class="table-responsive">
+                                            <table class="table table-hover">
+                                                <thead>
+                                                    <th>Full Name</th>
+                                                    <th>City</th>
+                                                    <th>Email</th>
+                                                    <th>Phone Number</th>
+                                                    <th>Gender</th>
+                                                    <th>Shareholder</th>
+                                                    <th>Pay Rate</th>
+                                                    <th>Pay To Day</th>
+                                                    <th>Pay To Year</th>
+                                                    <th></th>
+                                                </thead>
+                                                <tbody>
+                                                    <%for (let row of data){%>
+                                                        <tr class="unread">
+                                                            <td>
+                                                                <h6 class="mb-1"><%=`${row['lastName']} ${row['firstName']}`%></h6>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-1"><%=row['city']%></h6>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-1"><%=row['email']%></h6>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-1"><%=row['phoneNumber']%></h6>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-1"><%=(row['gender']) ? 'Male' : 'Female'%></h6>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-1"><%=(row['Shareholder']) ? 'True' : 'False'%></h6>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-1"><%=row['payRate']%></h6>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-1"><%=row['paidToDay']%></h6>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-1"><%=row['paidLastYear']%></h6>
+                                                            </td>
+                                                            <td>
+                                                                <a class="card-link btn btn-outline-info" href="/employees/<%=row['idEmployee']%>">Detail</a>
+            
+                                                            </td>
+                                                        </tr>
+                                                    <%}%>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- [ Main Content ] end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,57 @@
+<% layout('layout/boilerplate') %>
+
+    <div class="pcoded-wrapper">
+        <div class="pcoded-content">
+            <div class="pcoded-inner-content">
+                <!-- [ breadcrumb ] start -->
+
+                <!-- [ breadcrumb ] end -->
+                <div class="main-body">
+                    <div class="page-wrapper">
+                        <!-- [ Main Content ] start -->
+                        <div class="row">
+                            <div class="col-xl-12 col-md-6">
+                                <div class="card Recent-Users">
+                                    <div class="card-header">
+                                        <h5>Benefit Plan - <a href="/benefit-plan/new" class="">Create New</a></h5>
+                                    </div>
+                                    <div class="card-block px-0 py-3">
+                                        <div class="table-responsive">
+                                            <table class="table table-hover">
+                                                <thead>
+                                                    <th>Plan Name</th>
+                                                    <th>Deductable</th>
+                                                    <th>Percentage Copay</th>
+                                                    <th></th>
+                                                </thead>
+                                                <tbody>
+                                                    <%for (let row of benefitPlans){%>
+                                                        <tr class="unread">
+                                                            <td>
+                                                                <h6 class="mb-1"><%=row['Plan_Name']%></h6>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-1"><%=row['Deductable']%></h6>
+                                                            </td>
+                                                            <td>
+                                                                <h6 class="mb-1"><%=row['Percentage_CoPay']%></h6>
+                                                            </td>
+                                                            <td>
+                                                                <a class="card-link btn btn-outline-info" href="/benefit-plan/<%=row['Benefit_Plan_ID']%>">Detail</a>
+                        
+                                                            </td>
+                                                        </tr>
+                                                    <%}%>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- [ Main Content ] end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

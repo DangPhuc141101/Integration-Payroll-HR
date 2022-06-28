@@ -1,0 +1,200 @@
+<% layout('layout/boilerplate') %>
+    
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                            <div class="row">
+                                <div class="col-xl-6 col-md-6 mx-auto">
+                                    <div class="card Recent-Users">
+                                        <div class="card-header">
+                                            <h5>Create - Employee</h5>
+
+                                        </div>
+                                    </div>
+
+                                    <form action="/employees/<%=employee['idEmployee']%>?_method=PUT" method="POST"
+                                        class="needs-validation" novalidate>
+                                        <div class="mb-3 d-none">
+                                            <label class="form-label font-weight-bold" for="employee-number">Employee
+                                                Number</label>
+                                            <input type="number" id="employee-number" class="form-control bg-white"
+                                                name="employee[employeeNumber]" value="<%=employee['employeeNumber']%>">
+                                        </div>
+                                        <div class="mb-3 d-none">
+                                            <label class="form-label font-weight-bold" for="employee-id">Employee
+                                                ID</label>
+                                            <input type="number" id="employee-id" class="form-control bg-white"
+                                                name="employee[idEmployee]" value="<%=employee['idEmployee']%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label font-weight-bold" for="lastname">Last Name</label>
+                                            <input type="text" id="lastname" class="form-control bg-white"
+                                                name="employee[lastName]" value="<%=employee['lastName']%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="middle-initial" class="form-label font-weight-bold">Middle
+                                                Initial</label>
+                                            <input type="text" id="middle-initial" class="form-control bg-white"
+                                                name="employee[middleInitial]" value="<%=employee['middleInitial']%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="firstname" class="form-label font-weight-bold">First
+                                                Name</label>
+                                            <input type="text" id="firstname" class="form-control bg-white"
+                                                name="employee[firstName]" value="<%=employee['firstName']%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="ssn" class="form-label font-weight-bold">SSN</label>
+                                            <input type="number" id="ssn" class="form-control bg-white"
+                                                name="employee[ssn]" value="<%=employee['ssn']%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="pay-rate" class="form-label font-weight-bold">Pay Rate</label>
+                                            <input type="number" id="pay-rate" class="form-control bg-white" step="0.01"
+                                                name="employee[payRate]" value="<%=employee['payRate']%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="pay-rate-id" class="form-label font-weight-bold">Pay Rate
+                                                ID</label>
+                                            <select class="custom-select" id="pay-rate-id" name="employee[payRateId]"
+                                                value="<%=employee['employeeNumber']%>">
+                                                <% if (payRates.length>=1){%>
+                                                    <option selected value="<%=payRates[0]['idPay_Rates']%>">
+                                                        <%=payRates[0]['Pay_Rate_Name']%>
+                                                    </option>
+                                                    <%}%>
+                                                        <%for (let i=1; i<payRates.length; i++) {%>
+                                                            <option value="<%=payRates[i]['idPay_Rates']%>">
+                                                                <%=payRates[i]['Pay_Rate_Name']%>
+                                                            </option>
+                                                            <%}%>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="vacation-day" class="form-label font-weight-bold">Vacation
+                                                Day</label>
+                                            <input type="number" id="vacation-day" class="form-control bg-white"
+                                                name="employee[vacationDay]" value="<%=employee['vacationDay']%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="paid-to-day" class="form-label font-weight-bold">Paid To
+                                                Day</label>
+                                            <input type="number" id="paid-to-day" class="form-control bg-white"
+                                                name="employee[paidToDay]" value="<%=employee['paidToDay']%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="paid-last-year" class="form-label font-weight-bold">Paid Last
+                                                Year</label>
+                                            <input type="number" id="paid-last-year" class="form-control bg-white"
+                                                name="employee[paidLastYear]" value="<%=employee['paidLastYear']%>">
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label for="address1" class="form-label font-weight-bold">Address 1</label>
+                                            <input type="text" id="address1" class="form-control bg-white"
+                                                name="employee[address1]" value="<%=employee['address1']%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="address2" class="form-label font-weight-bold">Address 2</label>
+                                            <input type="text" id="address2" class="form-control bg-white"
+                                                name="employee[address2]" value="<%=employee['address2']%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="city" class="form-label font-weight-bold">City</label>
+                                            <input type="text" id="city" class="form-control bg-white"
+                                                name="employee[city]" value="<%=employee['city']%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="state" class="form-label font-weight-bold">State</label>
+                                            <input type="text" id="state" class="form-control bg-white"
+                                                name="employee[state]" value="<%=employee['state']%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="zip" class="form-label font-weight-bold">Zip</label>
+                                            <input type="number" id="zip" class="form-control bg-white"
+                                                name="employee[zip]" value="<%=employee['zip']%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label font-weight-bold">Email</label>
+                                            <input type="text" id="email" class="form-control bg-white"
+                                                name="employee[email]" value="<%=employee['email']%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="phone-number" class="form-label font-weight-bold">Phone
+                                                Number</label>
+                                            <input type="text" id="phone-number" class="form-control bg-white"
+                                                name="employee[phoneNumber]" value="<%=employee['phoneNumber']%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="social-security-number"
+                                                class="form-label font-weight-bold">Social Security Number</label>
+                                            <input type="text" id="social-security-number" class="form-control bg-white"
+                                                name="employee[socialSecurityNumber]"
+                                                value="<%=employee['socialSecurityNumber']%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="drivers-license" class="form-label font-weight-bold">Drivers
+                                                License</label>
+                                            <input type="text" id="drivers-license" class="form-control bg-white"
+                                                name="employee[driversLicense]" value="<%=employee['driversLicense']%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="maritalStatus" class="form-label font-weight-bold">Marital
+                                                Status</label>
+                                            <input type="text" id="maritalStatus" class="form-control bg-white"
+                                                name="employee[maritalStatus]" value="<%=employee['maritalStatus']%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="gender" class="form-label font-weight-bold">Gender</label>
+                                            <select class="custom-select" id="gender" name="employee[gender]"
+                                                value="<%=employee['gender']%>">
+                                                <option selected value="True">Male</option>
+                                                <option value="False">Female</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="shareholderStatus"
+                                                class="form-label font-weight-bold">Shareholder Status</label>
+                                            <input type="checkbox" id="shareholderStatus" class="checkbox" value="True"
+                                                name="employee[shareholderStatus]">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="benefit-plans" class="form-label font-weight-bold">Benefit
+                                                Plans</label>
+                                            <select class="custom-select" id="benefit-plans"
+                                                name="employee[benefitPlans]">
+                                                <% if (benefitPlans.length>=1){%>
+                                                    <option selected value="<%=benefitPlans[0]['Benefit_Plan_ID']%>">
+                                                        <%=benefitPlans[0]['Plan_Name']%>
+                                                    </option>
+                                                    <%}%>
+                                                        <%for (let i=1; i<benefitPlans.length; i++) {%>
+                                                            <option value="<%=benefitPlans[i]['Benefit_Plan_ID']%>">
+                                                                <%=benefitPlans[i]['Plan_Name']%>
+                                                            </option>
+                                                            <%}%>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="ethnicity" class="form-label font-weight-bold">Ethnicity</label>
+                                            <input type="text" id="ethnicity" class="form-control bg-white"
+                                                name="employee[ethnicity]" value="<%=employee['ethnicity']%>">
+                                        </div>
+                                        <div class="mb-3">
+                                            <button class="btn btn-outline-primary">Edit Employee</button>
+                                            <a class="card-link btn btn-outline-info" href="/employees">Back to list</a>
+                                        </div>
+                                </div>
+                                </form>
+
+                            </div>
+                        </div>
+                        <!-- [ Main Content ] end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

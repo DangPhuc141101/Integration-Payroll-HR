@@ -1,0 +1,85 @@
+<% layout('layout/boilerplate') %>
+   
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <!-- [ breadcrumb ] start -->
+
+                    <!-- [ breadcrumb ] end -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                            <div class="row">
+                                <div class="col-xl-6 col-md-6 mx-auto">
+                                    <div class="card Recent-Users">
+                                        <div class="card-header">
+                                            <h5>Pay rates</h5>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm">Pay Rate ID</div>
+                                            <div class="col-sm">
+                                                <%=payrate['idPayRates']%>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm">Pay Rate Name</div>
+                                            <div class="col-sm">
+                                                <%=payrate['payRateName']%>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm">Value</div>
+                                            <div class="col-sm">
+                                                <%=payrate['value']%>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm">Tax Percentage</div>
+                                            <div class="col-sm">
+                                                <%=payrate['taxPercentage']%>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm">Pay Type</div>
+                                            <div class="col-sm">
+                                                <%=payrate['payType']%>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm">Pay Amount</div>
+                                            <div class="col-sm">
+                                                <%=payrate['payAmount']%>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm">PT Level C</div>
+                                            <div class="col-sm">
+                                                <%=payrate['PTLevelC']%>
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                    <a class="card-link btn btn-outline-info" href="/payrates/<%=payrate['idPayRates']%>/edit">Edit</a>
+                                    <form class="d-inline" action="/payrates/<%=payrate['idPayRates']%>?_method=DELETE" method="POST">
+                                        <button class="btn btn-outline-danger">Delete</button>
+                                    </form>
+                                    <a class="card-link btn btn-outline-info" href="/payrates">Back to list</a>
+                                </div>
+                            </div>
+                            <!--[ Recent Users ] end-->
+
+                            <!-- [ statistics year chart ] start -->
+
+                            <!-- [ statistics year chart ] end -->
+                            <!--[social-media section] start-->
+
+
+
+                        </div>
+                        <!-- [ Main Content ] end -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
